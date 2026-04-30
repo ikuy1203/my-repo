@@ -3,7 +3,12 @@ on:
   workflow_dispatch:  # 手動実行イベント
     inputs:
       greeting: # 入力パラメータ
-        type: string  # データ型 文字列
+        type: choice
+        options:
+          - info
+          - warn
+          - error
+          - Hello
         default: Hello  # 入力パラメータのデフォルト値
         required: true  # 入力パラメータの必須フラグ
         description: A cheerful word  # 入力パラメータの概要
